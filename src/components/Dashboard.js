@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { fetchRandomRecipes } from "../services/Api";
 import RecipesCard from "./RecipesCard";
+import { localFoodieRandomItems } from "../services/Mock";
+import Header from "./Header";
 
 export default function Dashboard() {
 
@@ -11,18 +13,24 @@ export default function Dashboard() {
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        fetchRandomRecipes()
-            .then(response => {
-                setLoading(false)
-                setRecipes(response.data.recipes)
-                setError(null)
-                console.log(response.data)
-            })
-            .catch(error => {
-                console.log(error.response.data.message)
-                setLoading(false)
-                setError(error)
-            })
+
+        //Mock API(local)
+
+        setRecipes(localFoodieRandomItems.recipes);
+        setLoading(false)
+
+        // fetchRandomRecipes()
+        //     .then(response => {
+        //         setLoading(false)
+        //         setRecipes(response.data.recipes)
+        //         setError(null)
+        //         console.log(response.data)
+        //     })
+        //     .catch(error => {
+        //         console.log(error.response.data.message)
+        //         setLoading(false)
+        //         setError(error)
+        //     })
     }, [])
 
 
@@ -62,7 +70,7 @@ export default function Dashboard() {
                 <div className="row">
 
                 </div>
-                <div className="loadingFood">
+                <div className="loadingRecipes">
                     <h1>Loading...</h1>
                 </div>
             </div>
@@ -71,6 +79,7 @@ export default function Dashboard() {
         return(
             <div className="container-fluid">
                 <div className="row">
+                    <Header/>
 
                 </div>
                 {getMainContent()}
