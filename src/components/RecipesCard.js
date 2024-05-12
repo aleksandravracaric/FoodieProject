@@ -1,17 +1,26 @@
 import { Card } from "react-bootstrap";
 import { ListGroup } from "react-bootstrap";
+import {useNavigate} from "react-router-dom";
+import './style.css'
 
 
 export default function RecipesCard({ recipe }) {
+
+    const navigate = useNavigate();
+
+    const toDetailPage = () => {
+        navigate('/recipe' , {state : {recipe}})
+    }
+
     return (
-        <Card style={{ width: '18rem' }} key={recipe.id} className="foodCard" >
-            <Card.Img variant="top" src={recipe.image} className="foodImage" />
+        <Card style={{ width: '18rem' }} key={recipe.id} className="recipeCard" onClick={() => {toDetailPage()}} >
+            <Card.Img variant="top" src={recipe.image} className="recipeImage" />
             <Card.Body>
-                <Card.Title>{recipe.title}</Card.Title>
+                <Card.Title className="recipeTitle">{recipe.title}</Card.Title>
                 <Card.Text></Card.Text>
             </Card.Body>
             <ListGroup className="list-group-flush">
-                <ListGroup.Item>{recipe.readyInMinutes}</ListGroup.Item>
+                <ListGroup.Item className="recipeMinutes">{recipe.readyInMinutes}min</ListGroup.Item>
             </ListGroup>
         </Card>
     )
