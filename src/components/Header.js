@@ -4,7 +4,7 @@ import './style.css';
 
 export default function Header() {
     return (
-        <Navbar expand="lg" className="bg-body-tertiary d-flex justify-content-center">
+        <Navbar expand="lg" className="header d-flex justify-content-center">
             <Container>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className='justify-content-center'>
