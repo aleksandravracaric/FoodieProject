@@ -1,13 +1,14 @@
 .header {
     display: flex;
     justify-content: center;
-    width: 600px;
+    
     height: 70px;
     padding: 16px 24px 16px 24px;
-    top: 16px;
+    /* top: 16px;
     left: 20px;
-    right: 50px;
+    right: 50px; */
     background-image: #F0EBE1;
+    /* margin: 10px 10px 10px 10px; */
     border: 1px solid #2625223D;
     gap: 0px;
     border-radius: 32px 32px 32px 32px;
@@ -17,15 +18,6 @@
 }
 
 
-.containerLink{
-    display: flex;
-    justify-content: center;
-}
-
-.navLinkHeader{
-    display: flex;
-    justify-content: center;
-}
 
 .header-container {
     width: 600px;
