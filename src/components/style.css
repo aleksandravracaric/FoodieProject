@@ -17,15 +17,6 @@
 }
 
 
-.containerLink{
-    display: flex;
-    justify-content: center;
-}
-
-.navLinkHeader{
-    display: flex;
-    justify-content: center;
-}
 
 .header-container {
     width: 600px; /* Adjust width according to your design */
