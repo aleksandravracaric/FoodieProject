@@ -1,13 +1,15 @@
-import { Container, Nav, Navbar } from 'react-bootstrap';
-import './style.css';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
-
-export default function Header() {
+function BasicExample() {
     return (
-        <Navbar expand="lg" className="header d-flex justify-content-center">
+        <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className='justify-content-center'>
+
                     <Nav>
                         <Nav.Link href="/">HOME</Nav.Link>
                         <Nav.Link href="/searchRecipes">SEARCH RECIPES</Nav.Link>
@@ -16,5 +18,7 @@ export default function Header() {
                 </Navbar.Collapse>
             </Container>
         </Navbar>
-    )
+    );
 }
+
+export default BasicExample;

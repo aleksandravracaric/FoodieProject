@@ -12,12 +12,16 @@ export default function Dashboard() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null)
 
+
     useEffect(() => {
 
-        //Mock API(local)
+        // //Mock API(local)
 
         setRecipes(localFoodieRandomItems.recipes);
         setLoading(false)
+
+        
+       
 
         // fetchRandomRecipes()
         //     .then(response => {

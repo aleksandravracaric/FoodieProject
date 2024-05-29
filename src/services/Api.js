@@ -5,40 +5,32 @@ const baseURL = 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/rec
 const apiKey1 = '879a9ec3a7mshb698cb1339df89dp19bec7jsnead75be058fb';
 
 const headers = {
-  'X-RapidAPI-Key': '879a9ec3a7mshb698cb1339df89dp19bec7jsnead75be058fb',
+  'X-RapidAPI-Key': apiKey1,
   'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
 }
 
 
 export function fetchRandomRecipes() {
   const params = {
-    tags: 'vegetarian,dessert',
+    tags: 'dessert',
     number: '12'
   }
-  return axios.get(`${baseURL}/random`, { headers: headers  , params: params})
+  return axios.get(`${baseURL}/random`, { headers: headers, params: params })
 };
 
-const ingredientsById = async () => {
-
+export function searchRecipes(searchQuery){
   const params = {
-    ingredients: 'apples,flour,sugar',
-    number: '5',
-    ignorePantry: 'true',
-    ranking: '1'
+    query: searchQuery,
+    number: '12',
   }
+  return axios.get(`${baseURL}/searchComplex`, { headers: headers, params: params })
+}
 
-  const headers = {
-    'X-RapidAPI-Key': '879a9ec3a7mshb698cb1339df89dp19bec7jsnead75be058fb',
-    'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
+export function Nutrition(){
+  const params= {
 
-  };
-
-  const response = await axios.get(`${baseURL}/{id}/ingredientWidget.json`, { headers: headers });
-
-  console.log('Server Response:', response);
-  return response.data;
-};
-
-export { ingredientsById }
+  }
+  return axios.get(`${baseURL}/guessNutrition`, { headers: headers, params: params })
+}
 
 

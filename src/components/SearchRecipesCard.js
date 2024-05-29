@@ -17,10 +17,10 @@ export default function RecipesCard({ recipe }) {
             <Card.Body>
                 <Card.Title className="recipeTitle">{recipe.title}</Card.Title>
             </Card.Body>
-            <ListGroup className="list-group-flush">
-                <ListGroup.Item className="recipeMinutes">{recipe.readyInMinutes}MIN   {recipe.servings} SERVES</ListGroup.Item>
+            {/* <ListGroup className="list-group-flush">
+                <ListGroup.Item className="recipeLikes">{recipe.likes} </ListGroup.Item>
 
-            </ListGroup>
+            </ListGroup> */}
         </Card>
     )
 }
