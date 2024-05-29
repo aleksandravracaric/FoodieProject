@@ -23,7 +23,7 @@ export function searchRecipes(searchQuery){
     query: searchQuery,
     number: '12',
   }
-  return axios.get(`${baseURL}/searchComplex`, { headers: headers, params: params })
+  return axios.get(`${baseURL}/complexSearch`, { headers: headers, params: params })
 }
 
 export function Nutrition(){

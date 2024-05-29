@@ -17,24 +17,24 @@ export default function Dashboard() {
 
         // //Mock API(local)
 
-        setRecipes(localFoodieRandomItems.recipes);
-        setLoading(false)
+        // setRecipes(localFoodieRandomItems.recipes);
+        // setLoading(false)
 
         
        
 
-        // fetchRandomRecipes()
-        //     .then(response => {
-        //         setLoading(false)
-        //         setRecipes(response.data.recipes)
-        //         setError(null)
-        //         console.log(response.data)
-        //     })
-        //     .catch(error => {
-        //         console.log(error.response.data.message)
-        //         setLoading(false)
-        //         setError(error)
-        //     })
+        fetchRandomRecipes()
+            .then(response => {
+                setLoading(false)
+                setRecipes(response.data.recipes)
+                setError(null)
+                console.log(response.data)
+            })
+            .catch(error => {
+                console.log(error.response.data.message)
+                setLoading(false)
+                setError(error)
+            })
     }, [])
 
 
@@ -50,9 +50,9 @@ export default function Dashboard() {
         return (
             <div className="row">
                 <div className="grid">
-                    {recipes?.map((f => (
-                        <div className="box" key={f.id}>
-                            <RecipesCard recipe={f} />
+                    {recipes?.map((r => (
+                        <div className="box" key={r.id}>
+                            <RecipesCard recipe={r} />
                         </div>
                     )))}
                 </div>

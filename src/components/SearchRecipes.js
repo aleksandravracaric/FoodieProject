@@ -45,9 +45,6 @@ export default function SearchPage() {
                 <Header />
             </div>
             <Container>
-
-
-
                 <div className='row d-flex justify-content-center align-items-center'>
                     <div className='col-6 mt-3 justify-content-center align-items-center'>
                         <Form onSubmit={handleSearch} className='d-flex'>
@@ -64,8 +61,6 @@ export default function SearchPage() {
                         </Form>
                     </div>
                 </div>
-
-
                 <Row className='recipesSearchBox'>
                     {loading ? (
                         <div className="col-12 text-center  p-5">
@@ -78,7 +73,6 @@ export default function SearchPage() {
                                 </div>
                             </div>
                         </div>
-
                     ) : (
                         <div className="row">
                             <div className="grid">

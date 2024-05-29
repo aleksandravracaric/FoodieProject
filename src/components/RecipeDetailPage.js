@@ -35,7 +35,7 @@ export default function RecipeDetailPage() {
                                     <Card.Body className="ingBox">
                                         <h5 className="ingTitle">Ingredients</h5>
                                         <div className="recipeIng">
-                                            {recipe.extendedIngredients.map(ingredient => (
+                                            {recipe.extendedIngredients?.map(ingredient => (
                                                 <div key={ingredient.image + ingredient.id}>{ingredient.name}: {ingredient.amount} {ingredient.unit}</div>
                                             ))}
                                         </div>
