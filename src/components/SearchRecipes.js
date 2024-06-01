@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Container, Row, Col, Form, ListGroup, Button, Spinner } from 'react-bootstrap';
+import { Card, Container, Row, Col, Form, ListGroup, Button, Spinner, Alert } from 'react-bootstrap';
 import { searchRecipes } from '../services/Api';
 import Header from "./Header";
 import './style.css';
@@ -10,6 +10,7 @@ export default function SearchPage() {
     const [searchQuery, setSearchQuery] = useState('');
     const [recipes, setRecipes] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('')
 
     // const navigate = useNavigate();
 
@@ -26,9 +27,14 @@ export default function SearchPage() {
         if (searchQuery.trim() !== '') {
             setLoading(true);
             setRecipes([])
+            setError('')
             try {
                 const response = await searchRecipes(searchQuery);
-                setRecipes(response.data.results);
+                if (response.data.results && response.data.results.length > 0) {
+                    setRecipes(response.data.results);
+                } else {
+                    setError('No results found.');
+                }
             } catch (error) {
                 console.error('Error fetching recipes:', error);
             } finally {
@@ -36,6 +42,7 @@ export default function SearchPage() {
             }
         } else {
             setRecipes([]);
+            setError('Please enter a dish name. ')
         }
     };
 
@@ -61,6 +68,13 @@ export default function SearchPage() {
                         </Form>
                     </div>
                 </div>
+                {error && (
+                    <Row className="justify-content-center">
+                        <Alert variant="danger" className="col-6 mt-3 text-center">
+                            {error}
+                        </Alert>
+                    </Row>
+                )}
                 <Row className='recipesSearchBox'>
                     {loading ? (
                         <div className="col-12 text-center  p-5">

@@ -19,7 +19,6 @@ export default function RecipesCard(props) {
             </Card.Body>
             <ListGroup className="list-group-flush">
                 <ListGroup.Item className="recipeMinutes">{props.recipe.readyInMinutes}MIN   {props.recipe.servings} SERVES</ListGroup.Item>
-
             </ListGroup>
         </Card>
     )

@@ -26,8 +26,11 @@ export function searchRecipes(searchQuery){
   return axios.get(`${baseURL}/complexSearch`, { headers: headers, params: params })
 }
 
-export function Nutrition(){
+export function searchNutrition(dishName){
   const params= {
+    title: dishName,
+    number: '12',
+
 
   }
   return axios.get(`${baseURL}/guessNutrition`, { headers: headers, params: params })
