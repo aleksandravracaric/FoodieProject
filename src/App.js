@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard'
 import RecipeDetailPage from './components/RecipeDetailPage';
 import SearchRecipes from './components/SearchRecipes'; 
-import NutritionPage from './components/NutritonPage';
+import NutritionPage from './components/NutritionPage';
 
 function App() {
   return (
