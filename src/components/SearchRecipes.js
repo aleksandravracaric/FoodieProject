@@ -53,7 +53,7 @@ export default function SearchPage() {
             </div>
             <Container>
                 <div className='row d-flex justify-content-center align-items-center'>
-                    <div className='col-6 mt-3 justify-content-center align-items-center'>
+                    <div className='col-xl-6 col-lg-6 col-md-8 col-sm-10 mt-3 justify-content-center align-items-center'>
                         <Form onSubmit={handleSearch} className='d-flex'>
                             <Form.Control
                                 className='inputRecipes '
@@ -70,7 +70,7 @@ export default function SearchPage() {
                 </div>
                 {error && (
                     <Row className="justify-content-center">
-                        <Alert variant="danger" className="col-6 mt-3 text-center">
+                        <Alert variant="danger" className="col-xl-6 col-lg-6 col-md-8 col-sm-10 mt-3 text-center">
                             {error}
                         </Alert>
                     </Row>

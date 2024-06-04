@@ -15,11 +15,11 @@ export default function RecipeDetailPage() {
     const getContentWithoutIngredients = () => {
         return (
             <div className="row">
-                 <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                     <br />
                     {/* <h5>Instructions</h5> */}
                     <div className="recipeInstruction " dangerouslySetInnerHTML={{ __html: recipe.instructions }} />
-                </div> 
+                </div>
             </div>
         )
     }
@@ -83,7 +83,7 @@ export default function RecipeDetailPage() {
                                     )}
                                 </ListGroup>
                             ) : undefined}
-                            <hr class="mt-1 mb-1"/>
+                            <hr class="mt-1 mb-1" />
                             <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                 <Card.Img src={recipe.image} className="recipeDetailPhoto" />
                             </div>
