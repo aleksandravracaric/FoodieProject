@@ -17,24 +17,24 @@ export default function Dashboard() {
 
         // //Mock API(local)
 
-        setRecipes(localFoodieRandomItems.recipes);
-        setLoading(false)
+        // setRecipes(localFoodieRandomItems.recipes);
+        // setLoading(false)
 
         
        
 
-        // fetchRandomRecipes()
-        //     .then(response => {
-        //         setLoading(false)
-        //         setRecipes(response.data.recipes)
-        //         setError(null)
-        //         console.log(response.data)
-        //     })
-        //     .catch(error => {
-        //         console.log(error.response.data.message)
-        //         setLoading(false)
-        //         setError(error)
-        //     })
+        fetchRandomRecipes()
+            .then(response => {
+                setLoading(false)
+                setRecipes(response.data.recipes)
+                setError(null)
+                console.log(response.data)
+            })
+            .catch(error => {
+                console.log(error.response.data.message)
+                setLoading(false)
+                setError(error)
+            })
     }, [])
 
 

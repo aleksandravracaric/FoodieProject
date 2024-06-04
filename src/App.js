@@ -14,8 +14,6 @@ function App() {
         <Route path='/recipe' element={<RecipeDetailPage />}></Route>
         <Route path='/searchRecipes' element={<SearchRecipes />}></Route>
         <Route path='/nutrition' element={<NutritionPage/>} ></Route>
-
-
       </Routes>
     </BrowserRouter>
   );

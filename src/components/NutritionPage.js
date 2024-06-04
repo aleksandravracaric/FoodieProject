@@ -9,7 +9,7 @@ import NutritionCard from './NutritionCard';
 export default function NutritionPage() {
 
     const [dishName, setDishName] = useState('');
-    const [recipes, setRecipes] = useState([]);
+    const [nutrition, setNutrition] = useState(null)
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('')
 
@@ -23,12 +23,12 @@ export default function NutritionPage() {
         event.preventDefault();
         if (dishName.trim() !== '') {
             setLoading(true);
-            setRecipes([])
+            setNutrition(null)
             setError('')
             try {
                 const response = await searchNutrition(dishName);
                 if (response.data.calories || response.data.fat || response.data.protein || response.data.carbs) {
-                    setRecipes(response.data);
+                    setNutrition(response.data);
                 } else {
                     setError('No nutrition information found for this dish.');
                 }
@@ -38,7 +38,7 @@ export default function NutritionPage() {
                 setLoading(false);
             }
         } else {
-            setRecipes(null);
+            setNutrition(null);
             setError('Please enter a dish name.');
 
         }
@@ -91,11 +91,7 @@ export default function NutritionPage() {
                     ) : (
                         <div className="row">
                             <div className="grid">
-                                {recipes?.map((nutrition => (
-                                    <div className="box" key={nutrition.id}>
-                                        <NutritionCard nutrition={nutrition} />
-                                    </div>
-                                )))}
+                                {nutrition !== null ? <NutritionCard nutrition={nutrition} /> : <></>}
                             </div>
                         </div>
                     )}

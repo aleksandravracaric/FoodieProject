@@ -12,7 +12,6 @@ const headers = {
 
 export function fetchRandomRecipes() {
   const params = {
-    tags: 'dessert',
     number: '12'
   }
   return axios.get(`${baseURL}/random`, { headers: headers, params: params })
