@@ -37,6 +37,7 @@ export default function SearchPage() {
                 }
             } catch (error) {
                 console.error('Error fetching recipes:', error);
+                setError(error.message);
             } finally {
                 setLoading(false);
             }

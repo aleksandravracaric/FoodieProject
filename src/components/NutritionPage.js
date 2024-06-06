@@ -33,7 +33,9 @@ export default function NutritionPage() {
                     setError('No nutrition information found for this dish.');
                 }
             } catch (error) {
-                console.error('Error fetching recipes:', error);
+                console.error('Error fetching nutrition:', error);
+                setError(error.message);
+
             } finally {
                 setLoading(false);
             }

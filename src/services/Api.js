@@ -28,8 +28,6 @@ export function searchRecipes(searchQuery){
 export function searchNutrition(dishName){
   const params= {
     title: dishName,
-    number: '12',
-
 
   }
   return axios.get(`${baseURL}/guessNutrition`, { headers: headers, params: params })
