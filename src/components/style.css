@@ -1,5 +1,5 @@
-img{
-    width : 100%;
+img {
+    width: 100%;
 }
 
 
@@ -40,47 +40,44 @@ img{
 .recipeCard {
     background-color: #fff;
     border-radius: 10px 10px 10px 10px;
-
     overflow: hidden;
     height: 200px;
     width: 200px;
     max-width: wrap;
-    -webkit-box-shadow: 0px 0px 0px -6px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 0px 0px -6px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 18px 18px 1px rgba(0,0,0,0.3);
+    box-shadow: 0px 18px 18px 1px rgba(0,0,0,0.3);
 }
 
-.recipeNutritionCard{
+.recipeNutritionCard {
     background-color: #fff;
     border-radius: 10px 10px 10px 10px;
     overflow: hidden;
-    height: 200px;
-    width: 100%;
-
-    max-width: wrap;
+    /* height: 200px;
+    width: 200px; */
+    display: flex;
+    flex-direction: column;
     -webkit-box-shadow: 0px 0px 0px -6px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 0px 0px -6px rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    align-items: center;
 }
 
-.recipeSearchCard{
+.recipeSearchCard {
     background-color: #fff;
     border-radius: 10px 10px 10px 10px;
     overflow: hidden;
     margin-top: 30px;
     height: 200px;
-    width: 200px;
-    max-width: wrap;
+    width: 100%;
+    /* max-width: wrap; */
     -webkit-box-shadow: 0px 0px 0px -6px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 0px 0px -6px rgba(0, 0, 0, 0.3);
 }
 
-.colSearchRecipes{
+.colSearchRecipes {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    
-    
-
 }
 
 .recipeDetailBox {
@@ -103,7 +100,7 @@ img{
     object-fit: cover;
 }
 
-.searchPhoto{
+.searchPhoto {
     display: block;
     width: 100%;
     height: 100%;
@@ -113,7 +110,7 @@ img{
 
 .recipeDetailPhoto {
     width: 100%;
-    max-width: 400px; 
+    max-width: 400px;
     height: auto;
     margin: 0 auto;
     display: block;
@@ -122,17 +119,17 @@ img{
 
 
 
-.recipeInstructionTitle{
+.recipeInstructionTitle {
     display: flex;
     flex-direction: column;
     letter-spacing: 0.01em;
     text-align: start;
     justify-content: center;
-    margin-left: 50px; 
-    margin-top: 20px; 
+    margin-left: 50px;
+    margin-top: 20px;
 }
 
-.recipeInstruction{
+.recipeInstruction {
     display: flex;
     flex-direction: column;
     letter-spacing: 0.01em;
@@ -150,11 +147,11 @@ img{
     justify-content: center;
 }
 
-.textSearchRecipe{
+.textSearchRecipe {
     height: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .recipeDetailTitle {
@@ -165,7 +162,7 @@ img{
     text-align: center;
 }
 
-.recipeMinutes{
+.recipeMinutes {
     display: flex;
     flex-direction: column;
     font-size: 15px;
@@ -173,7 +170,7 @@ img{
     line-height: 17px;
     letter-spacing: 0.01em;
     text-align: right;
-    justify-content: end; 
+    justify-content: end;
 }
 
 .recipeMinutesServesDetail {
@@ -187,7 +184,7 @@ img{
     justify-content: center;
 }
 
-.ingTitle{
+.ingTitle {
     display: flex;
     flex-direction: column;
     font-size: 25px;
@@ -199,7 +196,7 @@ img{
     padding-bottom: 10px;
 }
 
-.recipeIng{
+.recipeIng {
     display: flex;
     flex-direction: column;
     font-size: 15px;
@@ -210,7 +207,7 @@ img{
     justify-content: center;
 }
 
-.ingBox{
+.ingBox {
     border-radius: 10px 10px 10px 10px;
     max-width: wrap;
     -webkit-box-shadow: 10px 10px 10px -6px rgba(0, 0, 0, 0.3);
@@ -224,18 +221,18 @@ img{
     justify-content: center;
     margin-left: 30%;
     background-color: rgb(231, 231, 231);
-    
+
 }
 
-.inputRecipes{
+.inputRecipes {
     margin-top: 30px;
     box-shadow: 10px 10px 10px -9px rgba(0, 0, 0, 0.3);
 
 }
 
-.recipesSearchBox{
+.recipesSearchBox {
     padding-top: 30px;
-    
+
 }
 
 
@@ -259,8 +256,49 @@ img{
     font-size: 30px;
 }
 
+.similarRecipesTitle{
+    display: flex;
+    justify-content: center;
+}
+
+.similarRecipesCard{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    height: 200px;
+    width: 200px;
+    max-width: wrap;
+    -webkit-box-shadow: 0px 0px 0px -6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 0px -6px rgba(0, 0, 0, 0.3);
+}
+
+.similarRecipesText{
+    text-align: right;
+}
+
+.similarRecipesContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+.similarRecipesRow{
+    padding-bottom: 60px;
+}
 .box {
     margin: 20px;
+}
+
+.nutritionCard{
+    min-height: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .grid {

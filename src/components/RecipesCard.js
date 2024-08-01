@@ -12,7 +12,7 @@ export default function RecipesCard(props) {
     }
 
     return (
-        <Card style={{ width: '18rem' }} key={props.recipe.id} className="recipeCard" onClick={() => {toDetailPage(props.recipe)}} >
+              <Card style={{ width: '18rem' }} key={props.recipe.id} className="recipeCard" onClick={() => {toDetailPage(props.recipe)}} >
             <Card.Img variant="top" src={props.recipe.image} className="recipeImage" />
             <Card.Body>
                 <Card.Title className="recipeTitle">{props.recipe.title}</Card.Title>
@@ -21,5 +21,6 @@ export default function RecipesCard(props) {
                 <ListGroup.Item className="recipeMinutes">{props.recipe.readyInMinutes}MIN   {props.recipe.servings} SERVES</ListGroup.Item>
             </ListGroup>
         </Card>
+      
     )
 }

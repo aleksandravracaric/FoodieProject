@@ -2,15 +2,27 @@ import { Card, ListGroup } from "react-bootstrap"
 import { useLocation } from "react-router-dom";
 import './style.css'
 import Header from "./Header"
+import { useState, useEffect } from "react";
+import { similarRecipes } from "../services/Api";
 
 
 export default function RecipeDetailPage() {
 
     const location = useLocation()
     const recipe = location.state.recipe
+    const [similarRecipesList, setSimilarRecipesList] = useState([])
     console.log(recipe)
 
 
+    useEffect(() => {
+        similarRecipes(recipe.id)
+            .then(response => {
+                setSimilarRecipesList(response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching similar recipes:', error);
+            });
+    }, [recipe.id]);
 
     const getContentWithoutIngredients = () => {
         return (
@@ -60,6 +72,26 @@ export default function RecipeDetailPage() {
         }
     }
 
+
+    const renderSimilarRecipes = () => {
+        return similarRecipesList.map(similarRecipe => (
+            <Card key={similarRecipe.id} style={{ width: '18rem' }} className="similarRecipeCard">
+                {/* <Card.Img variant="top" src={similarRecipe.imageType} /> */}
+                <Card.Body>
+                    <Card.Title>{similarRecipe.title}</Card.Title>
+                    <ListGroup className="list-group-flush similarRecipesText">
+                        {similarRecipe.readyInMinutes && (
+                            <ListGroup.Item>{similarRecipe.readyInMinutes} MIN</ListGroup.Item>
+                        )}
+                        {similarRecipe.servings && (
+                            <ListGroup.Item>{similarRecipe.servings} SERVINGS</ListGroup.Item>
+                        )}
+                    </ListGroup>
+                </Card.Body>
+            </Card>
+        ));
+    };
+
     return (
 
         <div className="container-fluid">
@@ -92,6 +124,14 @@ export default function RecipeDetailPage() {
                             {getExtraDetailContent()}
                         </div>
                     </Card>
+                </div>
+            </div>
+            <div className="row similarRecipesRow">
+                <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <h5 className="similarRecipesTitle">Similar Recipes</h5>
+                    <div className="similarRecipesContainer">
+                        {renderSimilarRecipes()}
+                    </div>
                 </div>
             </div>
         </div>

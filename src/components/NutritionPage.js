@@ -80,7 +80,7 @@ export default function NutritionPage() {
                 )}
                 <Row className='recipesSearchBox'>
                     {loading ? (
-                        <div className="col-12 text-center  p-5">
+                        <div className="col-12 text-center p-5">
                             <div className="loading-indicator">
                                 <Spinner animation="border" role="status">
                                     <span className="visually-hidden">Loading...</span>
@@ -91,11 +91,13 @@ export default function NutritionPage() {
                             </div>
                         </div>
                     ) : (
-                        <div className="row">
-                            <div className="grid">
+                        <div className='row'>
+                            <div className="nutritionCard col-12">
                                 {nutrition !== null ? <NutritionCard nutrition={nutrition} /> : <></>}
                             </div>
+
                         </div>
+
                     )}
                 </Row>
             </Container>
