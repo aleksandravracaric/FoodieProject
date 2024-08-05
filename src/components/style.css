@@ -271,9 +271,20 @@ img {
     box-shadow: -1px 10px 18px -3px rgba(0, 0, 0, 0.3);
 }
 
+.similarRecipeTitle{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
 
 .similarRecipesText {
+    display: flex;
+    position: relative;
     text-align: right;
+    justify-content: end;
 }
 
 .similarRecipesContainer {

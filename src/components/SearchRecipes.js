@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Card, Container, Row, Col, Form, ListGroup, Button, Spinner, Alert } from 'react-bootstrap';
+import { Container, Row, Form, Button, Spinner, Alert } from 'react-bootstrap';
 import { searchRecipes } from '../services/Api';
 import Header from "./Header";
 import './style.css';
-import { useNavigate } from 'react-router-dom';
 import SearchRecipesCard from './SearchRecipesCard';
 
 export default function SearchPage() {
@@ -11,6 +10,7 @@ export default function SearchPage() {
     const [recipes, setRecipes] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('')
+
 
     // const navigate = useNavigate();
 
@@ -46,6 +46,8 @@ export default function SearchPage() {
             setError('Please enter a dish name. ')
         }
     };
+
+
 
     return (
         <div className="container-fluid">

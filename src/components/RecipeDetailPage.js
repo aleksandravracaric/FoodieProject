@@ -78,7 +78,7 @@ export default function RecipeDetailPage() {
             <Card key={similarRecipe.id} style={{ width: '18rem' }} className="similarRecipeCard">
                 {/* <Card.Img variant="top" src={similarRecipe.imageType} /> */}
                 <Card.Body>
-                    <Card.Title>{similarRecipe.title}</Card.Title>
+                    <Card.Title className="similarRecipeTitle">{similarRecipe.title}</Card.Title>
                     <ListGroup className="list-group-flush similarRecipesText">
                         {similarRecipe.readyInMinutes && (
                             <ListGroup.Item>{similarRecipe.readyInMinutes} MIN</ListGroup.Item>
