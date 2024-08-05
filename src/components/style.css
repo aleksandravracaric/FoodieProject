@@ -41,23 +41,21 @@ img {
     background-color: #fff;
     border-radius: 10px 10px 10px 10px;
     overflow: hidden;
+    border: none !important;
     height: 200px;
     width: 200px;
     max-width: wrap;
-    -webkit-box-shadow: 0px 18px 18px 1px rgba(0,0,0,0.3);
-    box-shadow: 0px 18px 18px 1px rgba(0,0,0,0.3);
+    box-shadow: -1px 10px 18px -3px rgba(0, 0, 0, 0.3);
 }
 
 .recipeNutritionCard {
     background-color: #fff;
     border-radius: 10px 10px 10px 10px;
+    border: none !important;
     overflow: hidden;
-    /* height: 200px;
-    width: 200px; */
+    box-shadow: -1px 10px 18px -3px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
-    -webkit-box-shadow: 0px 0px 0px -6px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 0px 0px -6px rgba(0, 0, 0, 0.3);
     justify-content: center;
     align-items: center;
 }
@@ -66,12 +64,11 @@ img {
     background-color: #fff;
     border-radius: 10px 10px 10px 10px;
     overflow: hidden;
+    border: none !important;
     margin-top: 30px;
     height: 200px;
     width: 100%;
-    /* max-width: wrap; */
-    -webkit-box-shadow: 0px 0px 0px -6px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 0px 0px -6px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px 10px 18px -3px rgba(0, 0, 0, 0.3);
 }
 
 .colSearchRecipes {
@@ -256,44 +253,46 @@ img {
     font-size: 30px;
 }
 
-.similarRecipesTitle{
+.similarRecipesTitle {
     display: flex;
     justify-content: center;
 }
 
-.similarRecipesCard{
+.similarRecipeCard {
     display: flex;
+    border: none !important;
     flex-direction: column;
     background-color: #fff;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 10px;
     overflow: hidden;
     height: 200px;
     width: 200px;
-    max-width: wrap;
-    -webkit-box-shadow: 0px 0px 0px -6px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 0px 0px -6px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+    box-shadow: -1px 10px 18px -3px rgba(0, 0, 0, 0.3);
 }
 
-.similarRecipesText{
+
+.similarRecipesText {
     text-align: right;
 }
 
-.similarRecipesContainer{
+.similarRecipesContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    
+
 }
 
-.similarRecipesRow{
+.similarRecipesRow {
     padding-bottom: 60px;
 }
+
 .box {
     margin: 20px;
 }
 
-.nutritionCard{
+.nutritionCard {
     min-height: 100%;
     min-width: 100%;
     display: flex;
