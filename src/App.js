@@ -4,6 +4,29 @@ import Dashboard from './components/Dashboard'
 import RecipeDetailPage from './components/RecipeDetailPage';
 import SearchRecipes from './components/SearchRecipes'; 
 import NutritionPage from './components/NutritionPage';
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
+const apiKeyFirebase = process.env.REACT_APP_FIREBASE_API_KEY
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey:  apiKeyFirebase,
+  authDomain: "recipes-aleksandra.firebaseapp.com",
+  projectId: "recipes-aleksandra",
+  storageBucket: "recipes-aleksandra.appspot.com",
+  messagingSenderId: "1013281782964",
+  appId: "1:1013281782964:web:8c1f807938fe5c6a4b6be1",
+  measurementId: "G-816807DE7R"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 function App() {
   return (
