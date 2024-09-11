@@ -4,14 +4,13 @@ import { fetchRandomRecipes } from "../services/Api";
 import RecipesCard from "./RecipesCard";
 import { localFoodieRandomItems } from "../services/Mock";
 import Header from "./Header";
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 export default function Dashboard() {
-
-
     const [recipes, setRecipes] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null)
-
+    const analytics = getAnalytics();
 
     useEffect(() => {
 
@@ -20,13 +19,11 @@ export default function Dashboard() {
         // setRecipes(localFoodieRandomItems.recipes);
         // setLoading(false)
 
-        
-       
-
         fetchRandomRecipes()
             .then(response => {
                 setLoading(false)
                 setRecipes(response.data.recipes)
+                logEvent(analytics, 'recipes_fetched');
                 setError(null)
                 console.log(response.data)
             })

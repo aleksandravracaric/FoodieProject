@@ -9,13 +9,9 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 const apiKeyFirebase = process.env.REACT_APP_FIREBASE_API_KEY
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey:  apiKeyFirebase,
+  apiKey:`${apiKeyFirebase}`,
   authDomain: "recipes-aleksandra.firebaseapp.com",
   projectId: "recipes-aleksandra",
   storageBucket: "recipes-aleksandra.appspot.com",
@@ -24,9 +20,7 @@ const firebaseConfig = {
   measurementId: "G-816807DE7R"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+initializeApp(firebaseConfig);
 
 function App() {
   return (
